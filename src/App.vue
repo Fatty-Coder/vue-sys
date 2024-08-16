@@ -1,10 +1,8 @@
 <template>
   <div>
-    <h1>Hello,Vue3！</h1>
-    <span>num:{{ num }}</span>
+    <Layout></Layout>
   </div>
 </template>
 <script setup lang="ts">
-let num: number;
-num = 10;
+import Layout from '@/layout/index.vue';
 </script>

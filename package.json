@@ -10,7 +10,9 @@
     "lint:prettier": "prettier --write \"{src,tests,types}/**/*.{vue,js,jsx,ts,tsx,json,css,less,scss,html,md}\""
   },
   "dependencies": {
+    "@types/node": "^22.3.0",
     "@vitejs/plugin-vue": "^5.1.2",
+    "element-plus": "^2.8.0",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vue": "^3.4.37",
@@ -24,6 +26,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.27.0",
     "prettier": "^3.3.3",
+    "sass-embedded": "^1.77.8",
     "typescript-eslint": "^8.1.0",
     "vite-plugin-eslint": "^1.8.1",
     "vue-eslint-parser": "^9.4.3"

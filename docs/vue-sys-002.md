@@ -1,5 +1,7 @@
 # 安装一些常用的编码插件
 
+__注意：此教程涉及的源码在 https://github.com/Fatty-Coder/vue-sys/tree/tech002__
+
 安装eslint、prettier
 
 ```sh

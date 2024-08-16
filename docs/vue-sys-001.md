@@ -1,5 +1,7 @@
 # vue3+TS+Vite+Element Plus管理系统
 
+__注意：此教程涉及的源码在 https://github.com/Fatty-Coder/vue-sys/tree/tech001__
+
 搭建一个通用的后台管理系统框架，使用目前主流技术栈
 
 基础命令配置会跳过，不会使用yarn可以自行搜索一下，使用yarn主要为了省流量和硬盘空间 ^_^
