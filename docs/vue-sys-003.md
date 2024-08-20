@@ -1,5 +1,7 @@
 ## 集成element plus及编写主页
 
+__注意：此教程涉及的源码在 https://github.com/Fatty-Coder/vue-sys/tree/tech003__
+
 安装element plus
 
 ```sh

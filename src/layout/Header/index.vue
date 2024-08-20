@@ -34,7 +34,7 @@
             </div>
           </el-popover>
         </div>
-        <el-dropdown>
+        <el-dropdown @command="commandAction">
           <span class="el-dropdown-link">
             <el-avatar :size="30" class="avatar" :src="AvatarLogo" />
             admin
@@ -60,14 +60,44 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import type { TabsPaneContext } from 'element-plus';
+import { TabsPaneContext, ElMessageBox, ElMessage } from 'element-plus';
+import { useUserStore } from '@/store/modules/user';
+import router from '@/router';
 
 import AvatarLogo from '@/assets/image/avatar.png';
+
+const userStore = useUserStore();
 
 const activeName = ref('first');
 const toGitHub = (link) => {
   window.open(link);
 };
+
+const logOut = async () => {
+  ElMessageBox.confirm('您是否确认退出登录?', '温馨提示', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+  })
+    .then(async () => {
+      await userStore.logout();
+      await router.push({ path: '/login' });
+      //TagsViewStore.clearVisitedView();
+      ElMessage({
+        type: 'success',
+        message: '退出登录成功！',
+      });
+    })
+    .catch(() => {});
+};
+const commandAction = (key: number) => {
+  switch (key) {
+    case 1:
+      logOut();
+      break;
+  }
+};
+
 const handleClick = (tab: TabsPaneContext, event: Event) => {
   console.log(tab, event);
 };

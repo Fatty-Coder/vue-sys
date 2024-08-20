@@ -1,30 +1,30 @@
 <template>
-    <div class="g-container-layout" :class="classObj">
-      <div v-if="!isCollapse" class="drawer-bg" @click="handleClickOutside" />
-      <sidebar class="sidebar-container" v-if="mode === 'vertical'" />
+  <div class="g-container-layout" :class="classObj">
+    <div v-if="!isCollapse" class="drawer-bg" @click="handleClickOutside" />
+    <sidebar class="sidebar-container" v-if="mode === 'vertical'" />
+    <div
+      class="main-container"
+      :class="{
+        hideSliderLayout: mode === 'horizontal',
+      }"
+    >
+      <div :style="{ height: `${showTag ? 90 : 0}px` }"></div>
+      <u-header />
       <div
-        class="main-container"
-        :class="{
-          hideSliderLayout: mode === 'horizontal',
-        }"
+        class="m-container-content"
+        :class="{ 'app-main-hide-tag': !showTag }"
       >
-        <div :style="{ height: `${showTag ? 90 : 0}px` }"></div>
-        <u-header />
-        <div
-          class="m-container-content"
-          :class="{ 'app-main-hide-tag': !showTag }"
-        >
-          <Main />
-        </div>
+        <Main />
       </div>
     </div>
-  </template>
-  
-  <script lang="ts" setup>
-  import { computed, ref } from 'vue';
-  import Sidebar from '@/layout/Sidebar/index.vue';
-  import UHeader from '@/layout/Header/index.vue';
-  import Main from '@/layout/Main/index.vue';
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
+import Sidebar from '@/layout/Sidebar/index.vue';
+import UHeader from '@/layout/Header/index.vue';
+import Main from '@/layout/Main/index.vue';
 
 // 是否折叠
 const isCollapse = ref(true);

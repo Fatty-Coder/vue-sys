@@ -1,12 +1,15 @@
 <template>
   <div class="app-main">
-    <div class="app-main-inner">Home</div>
+    <div class="app-main-inner">
+      <router-view></router-view>
+    </div>
     <Footer />
   </div>
 </template>
 
 <script lang="ts" setup>
 import Footer from '@/layout/Footer/index.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <style lang="scss" scoped>
