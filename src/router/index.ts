@@ -1,9 +1,18 @@
 import { createRouter, RouteRecordRaw, createWebHashHistory } from 'vue-router';
-import Layout from '@/layout/index.vue';
+import commonRouter from './moduels/common';
 // 扩展继承属性
 interface extendRoute {
   hidden?: boolean;
 }
+
+// 异步组件
+export const asyncRoutes = [
+  ...commonRouter,
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
+  },
+];
 
 /**
  * path ==> 路由路径
@@ -31,22 +40,13 @@ export const constantRoutes: Array<RouteRecordRaw & extendRoute> = [
   {
     path: '/',
     name: 'layout',
-    component: Layout,
     redirect: '/home',
-    children: [
-      {
-        path: '/home',
-        component: () => import('@/views/home/index.vue'),
-        name: 'home',
-        meta: { title: '首页', icon: 'House', affix: true, role: ['other'] },
-      },
-    ],
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(), // hash
-  routes: constantRoutes,
+  routes: constantRoutes.concat(asyncRoutes),
 });
 
 export default router;

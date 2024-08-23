@@ -18,30 +18,43 @@
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
+        :default-active="activeMenu"
         background-color="#304156"
         text-color="#bfcbd9"
-        default-active="2"
+        :collapse-transition="false"
         class="el-menu-vertical-demo"
+        :collapse="isCollapse"
       >
-        <el-menu-item index="1">
-          <span>Home</span>
-        </el-menu-item>
-        <el-sub-menu index="2">
-          <template #title>
-            <span>菜单</span>
-          </template>
-          <el-menu-item index="2-1">菜单1</el-menu-item>
-          <el-menu-item index="2-2">菜单2</el-menu-item>
-        </el-sub-menu>
+        <sub-item
+          v-for="route in asyncRoutes"
+          :key="route.path"
+          :item="route"
+          :base-path="route.path"
+        />
       </el-menu>
     </el-scrollbar>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import SubItem from './components/SubItem.vue';
+import { useRoute } from 'vue-router';
+import { ref, computed } from 'vue';
+import { asyncRoutes } from '@/router/index';
 
-const isCollapse = ref(true);
+const isCollapse = ref(false);
+
+
+// 在setup中获取store
+const route = useRoute();
+const activeMenu = computed(() => {
+  const { meta, path } = route;
+  // if set path, the sidebar will highlight the path you set
+  if (meta.activeMenu) {
+    return meta.activeMenu;
+  }
+  return path;
+});
 </script>
 
 <style lang="scss">

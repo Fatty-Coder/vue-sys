@@ -1,5 +1,7 @@
 ## 安装路由和写一个简单的登陆
 
+__注意：此教程涉及的源码在 https://github.com/Fatty-Coder/vue-sys/tree/tech004__
+
 安装 路由组件
 
 ```sh

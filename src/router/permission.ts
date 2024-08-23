@@ -5,7 +5,6 @@ import { useUserStore } from '@/store/modules/user';
 const whiteList = ['/login']; // 设置白名单
 
 router.beforeEach(async (to, from, next) => {
-
   // 设置标题
   if (typeof to.meta.title === 'string') {
     document.title = to.meta.title || 'vue sys';
@@ -17,8 +16,7 @@ router.beforeEach(async (to, from, next) => {
     if (to.path === '/login') {
       // 如果已登录，请重定向到主页
       next({ path: '/' });
-    } 
-    else{
+    } else {
       next();
     }
   } else {
