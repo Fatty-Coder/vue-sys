@@ -1,6 +1,6 @@
 import Layout from '@/layout/index.vue';
 
-const tableRouter = [
+const commonRouter = [
   {
     path: '/menu',
     component: Layout,
@@ -26,4 +26,4 @@ const tableRouter = [
   },
 ];
 
-export default tableRouter;
+export default commonRouter;

@@ -44,7 +44,6 @@ import { asyncRoutes } from '@/router/index';
 
 const isCollapse = ref(false);
 
-
 // 在setup中获取store
 const route = useRoute();
 const activeMenu = computed(() => {

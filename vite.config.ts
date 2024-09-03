@@ -20,6 +20,16 @@ export default defineConfig({
     open: true,
     /** 端口被占用时，是否直接退出 */
     strictPort: true,
+    cors: true,
+    /** 接口代理 */
+    proxy: {
+      "/api": {
+        target: "http://t.weather.sojson.com/",
+        ws: true,
+        /** 是否允许跨域 */
+        changeOrigin: true
+      }
+    },
   },
 
 });

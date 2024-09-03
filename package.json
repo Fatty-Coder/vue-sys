@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/node": "^22.3.0",
     "@vitejs/plugin-vue": "^5.1.2",
+    "axios": "^1.7.5",
     "element-plus": "^2.8.0",
     "pinia": "^2.2.2",
     "pinia-persistedstate-plugin": "^0.1.0",
