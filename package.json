@@ -10,31 +10,31 @@
     "lint:prettier": "prettier --write \"{src,tests,types}/**/*.{vue,js,jsx,ts,tsx,json,css,less,scss,html,md}\""
   },
   "dependencies": {
-    "@types/node": "^22.3.0",
+    "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^5.1.2",
     "axios": "^1.7.5",
     "element-plus": "^2.8.0",
-    "pinia": "^2.2.2",
+    "pinia": "^3.0.4",
     "pinia-persistedstate-plugin": "^0.1.0",
-    "pinia-plugin-persistedstate": "^3.2.1",
+    "pinia-plugin-persistedstate": "^4.7.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
-    "vue": "^3.4.37",
-    "vue-router": "^4.4.3",
-    "vue-tsc": "^2.0.29"
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3",
+    "vue-tsc": "^3.1.5"
   },
   "devDependencies": {
     "@types/vue-router": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.1.0",
-    "@typescript-eslint/parser": "^8.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
     "eslint": "^9.9.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.27.0",
+    "eslint-plugin-vue": "^10.6.2",
     "prettier": "^3.3.3",
     "sass-embedded": "^1.77.8",
     "typescript-eslint": "^8.1.0",
     "vite-plugin-eslint": "^1.8.1",
-    "vue-eslint-parser": "^9.4.3"
+    "vue-eslint-parser": "^10.2.0"
   }
 }
